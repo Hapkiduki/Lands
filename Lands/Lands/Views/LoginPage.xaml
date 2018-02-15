@@ -6,94 +6,97 @@
              Title="Login">
     <ContentPage.Content>
         <ScrollView>
-            
-        
-        <StackLayout
+
+
+            <StackLayout
             Padding="10,20,10,5">
-            <Label 
-                FontAttributes="Bold"
-                FontSize="Large"
-                HorizontalOptions="Center" 
-                Text="Lands" />
-            <Image
+                
+                <Image
                 Source="onu"
                 WidthRequest="200">
-            </Image>
-            <Grid
+                </Image>
+                <Grid
                 Margin="0,20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <Label 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label 
                     Grid.Row="0"
                     Grid.Column="0"
-                Text="E-Mail" />
-                <Entry
+                Text="E-Mail"
+                        VerticalOptions="Center"/>
+                    <Entry
                 Keyboard="Email"
                 Placeholder="Enter your email..."
                     Grid.Row="0"
                     Grid.Column="1">
-                </Entry>
-                <Label 
+                    </Entry>
+                    <Label 
                     Grid.Row="1"
                     Grid.Column="0"
-                Text="Password" />
-                <Entry
+                Text="Password"
+                        VerticalOptions="Center"/>
+                    <Entry
                     Grid.Row="1"
                     Grid.Column="1"
                 IsPassword="True"
                 Placeholder="Enter your password...">
-                </Entry>
-            </Grid>
-            <StackLayout
+                    </Entry>
+                </Grid>
+                <ActivityIndicator>
+                </ActivityIndicator>
+                <StackLayout
                 Orientation="Horizontal">
-            <Label
+                    <Label
                 HorizontalOptions="StartAndExpand"
                 Text="Rememberme in this device"
                 VerticalOptions="Center">
-            </Label>
-            <Switch
+                    </Label>
+                    <Switch
                 HorizontalOptions="End">
-            </Switch>
-            </StackLayout>
-            <ActivityIndicator>
-            </ActivityIndicator>
-            <StackLayout
+                    </Switch>
+                </StackLayout>
+                <Label 
+                    HorizontalOptions="Center"
+                    Text="Forgot your password?"
+                    TextColor="Blue"
+                       ></Label>
+                <StackLayout
                 Margin="40,0">
-                <Button
+                    <Button
                     BackgroundColor="Navy"
                     BorderRadius="23"
                     HeightRequest="46"
                     Text="Login"
                     TextColor="White">
-                </Button>
-                <Button
+                    </Button>
+                    <Button
                     BackgroundColor="Purple"
                     BorderRadius="23"
                     HeightRequest="46"
                     Text="Register"
                     TextColor="White">
-                </Button>
-            </StackLayout>
-            <StackLayout
+                    </Button>
+                </StackLayout>
+                <StackLayout
                 HorizontalOptions="Center"
                 Orientation="Horizontal">
-                <Image
+                    <Image
                     Source="facebook"
                     WidthRequest="100">
-                </Image>
-                <Image
+                    </Image>
+                    <Image
                     Source="twitter_logo"
                     WidthRequest="75">
-                </Image>
-                <Image
+                    </Image>
+                    <Image
                     Source="instagram_logo"
                     WidthRequest="80">
-                </Image>
-               
+                    </Image>
+
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
