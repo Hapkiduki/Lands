@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{36B974AB-28AE-4E44-BF85-DF7532343A0C}</ProjectGuid>
+    <ProjectGuid>{6BD4C830-B588-4262-A364-97FED72D38C2}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>Lands.iOS</RootNamespace>
@@ -111,6 +111,12 @@
     <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\ic_chevron_right.png" />
+    <BundleResource Include="Resources\ic_action_info.png" />
+    <BundleResource Include="Resources\ic_action_language.png" />
+    <BundleResource Include="Resources\ic_action_monetization_on.png" />
+    <BundleResource Include="Resources\ic_action_people.png" />
+    <BundleResource Include="Resources\ic_action_translate.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -119,23 +125,26 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.0.121934" />
+    <PackageReference Include="Xam.Plugin.Connectivity">
+      <Version>3.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="2.5.0.122203" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Lands\Lands.csproj">
-      <Project>{3158185D-01F9-4220-8B4B-3ADF6826AA07}</Project>
+      <Project>{D575375E-DDB8-4935-97B8-85F5117410CB}</Project>
       <Name>Lands</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\onu.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\facebook.png" />
+    <BundleResource Include="Resources\facebook_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\instagram_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\onu.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\twitter_logo.png" />

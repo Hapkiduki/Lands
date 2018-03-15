@@ -1,76 +1,49 @@
-﻿
-
-namespace Lands.ViewModels
+﻿namespace Lands.ViewModels
 {
     using GalaSoft.MvvmLight.Command;
-    using Lands.Views;
     using System.Windows.Input;
+    using Views;
     using Xamarin.Forms;
 
     public class LoginViewModel : BaseViewModel
     {
-
-
         #region Attributes
         private string email;
         private string password;
-        private bool isRunnig;
+        private bool isRunning;
         private bool isEnabled;
-
         #endregion
-
 
         #region Properties
         public string Email
         {
-            get
-            {
-                return this.email;
-            }
-            set
-            {
-                SetValue(ref this.email, value);
-            }
+            get { return this.email; }
+            set { SetValue(ref this.email, value); }
         }
 
         public string Password
         {
-            get
-            {
-                return this.password;
-            }
-            set
-            {
-                SetValue(ref this.password, value);
-            }
+            get { return this.password; }
+            set { SetValue(ref this.password, value); }
         }
 
-        public bool IsRunnig
+        public bool IsRunning
         {
-            get
-            {
-                return this.isRunnig;
-            }
-            set
-            {
-                SetValue(ref this.isRunnig, value);
-            }
+            get { return this.isRunning; }
+            set { SetValue(ref this.isRunning, value); }
         }
 
-        public bool IsRemembered { get; set; }
+        public bool IsRemembered
+        {
+            get;
+            set;
+        }
 
         public bool IsEnabled
         {
-            get
-            {
-                return this.isEnabled;
-            }
-            set
-            {
-                SetValue(ref this.isEnabled, value);
-            }
+            get { return this.isEnabled; }
+            set { SetValue(ref this.isEnabled, value); }
         }
-
         #endregion
 
         #region Constructors
@@ -79,9 +52,10 @@ namespace Lands.ViewModels
             this.IsRemembered = true;
             this.IsEnabled = true;
 
-
-            this.Email = "tenkan.af@gmail.com";
+            this.Email = "jzuluaga55@gmail.com";
             this.Password = "1234";
+
+            // http://restcountries.eu/rest/v2/all
         }
         #endregion
 
@@ -94,14 +68,13 @@ namespace Lands.ViewModels
             }
         }
 
-
         private async void Login()
         {
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "You must enter an Email!",
+                    "You must enter an email.",
                     "Accept");
                 return;
             }
@@ -110,35 +83,34 @@ namespace Lands.ViewModels
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "You must enter a password!",
+                    "You must enter a password.",
                     "Accept");
                 return;
             }
 
-            this.IsRunnig = true;
+            this.IsRunning = true;
             this.IsEnabled = false;
 
-            if (this.Email != "tenkan.af@gmail.com" || this.Password != "1234")
+            if (this.Email != "jzuluaga55@gmail.com" || this.Password != "1234")
             {
-                this.IsRunnig = false;
+                this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "Email or Password incorrect.",
+                    "Email or password incorrect.",
                     "Accept");
                 this.Password = string.Empty;
                 return;
-
             }
 
-            this.IsRunnig = false;
+            this.IsRunning = false;
             this.IsEnabled = true;
+
             this.Email = string.Empty;
             this.Password = string.Empty;
 
             MainViewModel.GetInstance().Lands = new LandsViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
-
         }
         #endregion
     }

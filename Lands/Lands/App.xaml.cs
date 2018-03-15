@@ -1,34 +1,30 @@
 ﻿namespace Lands
 {
-    using Views;
     using Xamarin.Forms;
+    using Views;
 
     public partial class App : Application
 	{
-        #region Constructors
-        public App()
-        {
-            InitializeComponent();
+		public App ()
+		{
+			InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
-        }
-        #endregion
+			this.MainPage = new NavigationPage(new LoginPage());
+		}
 
-        #region Methods
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
+		protected override void OnStart ()
+		{
+			// Handle when your app starts
+		}
 
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
+		protected override void OnSleep ()
+		{
+			// Handle when your app sleeps
+		}
 
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        } 
-        #endregion
-    }
+		protected override void OnResume ()
+		{
+			// Handle when your app resumes
+		}
+	}
 }
